@@ -15,7 +15,9 @@ def store_checkpoints(encoder, decoder, idx_dict, opts):
     contains the char_to_index and index_to_char mappings, and the start_token
     and end_token values.
     """
-    pass
+    #print("Saving Model in {}".format(opts.checkpoints_dir))
+    torch.save(encoder,"{}/encoder.pth".format(opts.checkpoints_dir))
+    torch.save(decoder,"{}/decoder.pth".format(opts.checkpoints_dir))
 
 
 def store_loss_plots(train_losses, val_losses, opts):
