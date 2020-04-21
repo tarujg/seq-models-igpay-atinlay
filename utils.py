@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 
-
 def store_checkpoints(encoder, decoder, idx_dict, opts):
     """Saves the current encoder and decoder models, along with idx_dict, which
     contains the char_to_index and index_to_char mappings, and the start_token
@@ -18,7 +17,6 @@ def store_checkpoints(encoder, decoder, idx_dict, opts):
     #print("Saving Model in {}".format(opts.checkpoints_dir))
     torch.save(encoder,"{}/encoder.pth".format(opts.checkpoints_dir))
     torch.save(decoder,"{}/decoder.pth".format(opts.checkpoints_dir))
-
 
 def store_loss_plots(train_losses, val_losses, opts):
     """Saves a plot of the training and validation loss curves.
@@ -34,7 +32,6 @@ def store_loss_plots(train_losses, val_losses, opts):
     plt.tight_layout()
     plt.savefig(os.path.join(opts.checkpoints_dir, 'loss_plot.pdf'))
     plt.close()
-
 
 def create_dir_if_not_exists(directory):
     """Creates a directory if it doesn't already exist.
