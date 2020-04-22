@@ -35,7 +35,7 @@ def visualize_attention(input_string, encoder, decoder, idx_dict, opts, save='sa
 
     decoder_hidden = encoder_hidden
     decoder_input = Variable(torch.LongTensor([[start_token]]))  # For BS = 1
-    decoder_cell = Variable(torch.zeros(decoder_hidden.size()))
+    decoder_cell = encoder_hidden
 
     produced_end_token = False
 
